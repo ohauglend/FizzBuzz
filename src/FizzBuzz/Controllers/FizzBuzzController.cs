@@ -20,14 +20,7 @@ public class FizzBuzzController(IFizzBuzzService fizzBuzzService) : ControllerBa
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<FizzBuzzResponse> Execute([FromBody] FizzBuzzRequest request)
     {
-        try
-        {
-            var result = fizzBuzzService.Generate(request);
-            return Ok(result);
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(ex.Message);
-        }
+        var result = fizzBuzzService.Generate(request);
+        return Ok(result);
     }
 }

@@ -31,6 +31,28 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+// Global exception handling
+app.UseExceptionHandler(exceptionHandlerApp =>
+{
+    exceptionHandlerApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+        context.Response.ContentType = "application/json";
+
+        var exceptionHandlerPathFeature = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerPathFeature>();
+        
+        if (exceptionHandlerPathFeature?.Error is ArgumentException argEx)
+        {
+            await context.Response.WriteAsJsonAsync(new { error = argEx.Message });
+        }
+        else
+        {
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await context.Response.WriteAsJsonAsync(new { error = "An unexpected error occurred." });
+        }
+    });
+});
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

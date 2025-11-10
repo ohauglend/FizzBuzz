@@ -10,13 +10,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_3_Fizz()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 3, End = 3 };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Single(response.Results);
         Assert.Equal("Fizz", response.Results[0]);
     }
@@ -24,13 +21,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_5_Buzz()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 5, End = 5 };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Single(response.Results);
         Assert.Equal("Buzz", response.Results[0]);
     }
@@ -38,13 +32,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_4_Fuzz()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 4, End = 4, IncludeFuzz = true };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Single(response.Results);
         Assert.Equal("Fuzz", response.Results[0]);
     }
@@ -52,13 +43,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_9_Jazz()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 9, End = 9, IncludeJazz = true };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Single(response.Results);
         Assert.Equal("FizzJazz", response.Results[0]);
     }
@@ -66,13 +54,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_HappyPath_OneToOneHundred()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 1, End = 100 };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Equal(100, response.Results.Length);
         Assert.Equal("1", response.Results[0]);
         Assert.Equal("Fizz", response.Results[2]);  // 3
@@ -84,13 +69,10 @@ public class FizzBuzzServiceTests
     [Fact]
     public void Generate_HappyPathReversed_OneToOneHundredReversed()
     {
-        // Arrange
         var request = new FizzBuzzRequest { Start = 1, End = 100, Reverse = true };
         
-        // Act
         var response = _service.Generate(request);
         
-        // Assert
         Assert.Equal(100, response.Results.Length);
         Assert.Equal("Buzz", response.Results[0]); // 100 (reversed, so first)
         Assert.Equal("FizzBuzz", response.Results[85]); // 15 (100-15+1 = 86, 0-indexed = 85)
