@@ -23,11 +23,11 @@ Rules apply additively. Example: `36` with all rules → "FizzFuzzJazz"
 ```plaintext
 FizzBuzz/
 ├── src/
-│   └── FizzBuzz/
-│       ├── Controllers/     # API endpoints
-│       ├── Services/        # Business logic
+│   └── FizzBuzz.Web/
+│       ├── Components/      # Blazor components
 │       ├── Models/          # Request/Response models
-│       └── Interfaces/      # Service contracts
+│       ├── Services/        # Business logic
+│       └── Program.cs       # App entry point
 └── tests/
     └── FizzBuzz.Tests/      # Unit tests
 ```
@@ -35,11 +35,11 @@ FizzBuzz/
 ## Quick Start
 
 ```powershell
-# Run the API
-dotnet run --project src/FizzBuzz
+# Run the web app
+dotnet run --project src/FizzBuzz.Web
 
 # Run tests
 dotnet test
 ```
 
-API available at `http://localhost:5000/swagger` with interactive documentation.
+Web app available at `http://localhost:5000`

@@ -1,6 +1,6 @@
 using FizzBuzz.Web.Models;
 
-namespace FizzBuzz.Web.Services;
+namespace FizzBuzz.Web.Interfaces;
 
 public interface IFizzBuzzService
 {

@@ -1,3 +1,4 @@
+using FizzBuzz.Web.Interfaces;
 using FizzBuzz.Web.Models;
 
 namespace FizzBuzz.Web.Services;
