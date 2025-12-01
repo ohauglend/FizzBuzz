@@ -11,6 +11,9 @@ builder.Services
 
 var app = builder.Build();
 
+app.UseAntiforgery();
+
+app.UseStaticFiles();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

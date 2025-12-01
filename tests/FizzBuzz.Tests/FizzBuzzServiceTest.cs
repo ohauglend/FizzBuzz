@@ -1,5 +1,5 @@
-﻿using FizzBuzz.Services;
-using FizzBuzz.Models;
+﻿using FizzBuzz.Web.Services;
+using FizzBuzz.Web.Models;
 
 namespace FizzBuzz.Tests;
 

@@ -35,8 +35,14 @@ FizzBuzz/
 ## Quick Start
 
 ```powershell
-# Run the web app
+# Build the solution
+dotnet build
+
+# Run the web app (preferred method)
 dotnet run --project src/FizzBuzz.Web
+
+# Alternative:Set environment to Development and run DLL directly (only needed if exe is blocked by organization policy)
+$env:ASPNETCORE_ENVIRONMENT='Development'; dotnet src/FizzBuzz.Web/bin/Debug/net9.0/FizzBuzz.Web.dll
 
 # Run tests
 dotnet test

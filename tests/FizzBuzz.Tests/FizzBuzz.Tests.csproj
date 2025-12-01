@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FizzBuzz\FizzBuzz.csproj" />
+    <ProjectReference Include="..\..\src\FizzBuzz.Web\FizzBuzz.Web.csproj" />
   </ItemGroup>
 
 </Project>
